@@ -4,7 +4,7 @@ using namespace std;
 int main()
 {
 	int i1=50;
-	int i2=6;
+	int i2=60;
 	cout<<cmp_int(i1,&i2)<<endl;
 	return 0;
 }

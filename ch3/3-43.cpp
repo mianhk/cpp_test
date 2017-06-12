@@ -4,7 +4,8 @@ using int_array=int[4];
 typedef int int_array[4];
 int main()
 {
-	int ia[3][4];
+	int ia[3][4]={
+	0,1,2,3,4,5,6,7,8,9,10,11};
 	cout<<"方法一：采用指针"<<endl; 
 	for(int_array *p=ia;p!=end(ia);++p){
 		for(int *q=*p;q!=*p+4;++q){
@@ -14,9 +15,9 @@ int main()
 	}
 	//方法二
 	cout<<"方法二：采用范围for循环"<<endl;
-	for(auto *a:ia){
-		for(;a!=4;++a){
-			cout<<*a;
+	for(int (&row)[4]:ia){
+		for(int &col:row){
+			cout<<col<<", ";
 		}
 		cout<<endl;
 	}
