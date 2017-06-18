@@ -1,7 +1,10 @@
-//using namespace std;
-#include <string>
+
 #include <iostream>
+#include <string>
+using namespace std;
 class Sales_data{
+	friend std::istream &read(std::istream& is,Sales_data& item);
+	friend std::ostream &print(std::ostream& os,const Sales_data& item);
 	public:
 	//新增的构造函数
 //	Sales_data()=default;	
@@ -64,5 +67,6 @@ Sales_data add(const Sales_data& item1,const Sales_data& item2){
 int main(){
 	Sales_data sale1("kaishi");
 	Sales_data sale2(cin);
+	
 	return 0;
 }
