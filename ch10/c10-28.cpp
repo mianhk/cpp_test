@@ -12,6 +12,11 @@ int main(){
 //		v1.(i);
 //		v2.
 //	}
-	
+vector<int> vec={1,2,3,4,5};
+	ostream_iterator<int> out_iter(cout," ");
+	for (auto e:vec){
+		*out_iter++=e;
+	}
+	cout<<endl;
 	return 0;
 }
