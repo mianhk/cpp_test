@@ -3,15 +3,15 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-
+//有问题，运行出错 
 class HasPtr{
 	friend void swap(HasPtr&,HasPtr&);
 	friend void print_s(HasPtr &h);
 	public:
 		HasPtr(const string &s):ps(new string(s)),i(0),use(new size_t(1)){
 		}
-//		HasPtr(int t):ps(new string("")),i(t),use(new size_t(1)){
-		
+		explicit HasPtr(int t):ps(new string("")),i(t),use(new size_t(1)){
+	}
 		HasPtr(const HasPtr &p):
 			ps(new string(*p.ps)),i(p.i),use(p.use){++use;
 			}         //拷贝构造函数 
@@ -83,10 +83,11 @@ int main(){
 	
 	cout<<"//////////////"<<endl;
 	vector<HasPtr> vh;
-	HasPtr h0(" ");
+	
 	for(int i=0;i!=10;++i){
-//		cout<<"sdasd"<<endl;
-		h0=" "+i;
+		cout<<"sdasd"<<endl;
+		HasPtr h0(i);		
+//h0=i;
 //		print_s(h0);
 		cout<<*h0<<" ";
 		vh.push_back(h0);
