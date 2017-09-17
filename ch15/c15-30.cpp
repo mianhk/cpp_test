@@ -17,11 +17,6 @@ class Basket{
 
 
 
-
-
-
-
-
 int main(){
 	return 0;
 }
