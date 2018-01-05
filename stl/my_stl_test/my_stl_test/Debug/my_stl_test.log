@@ -1,0 +1,10 @@
+﻿  main.cpp
+f:\learn_cpp\stl\my_stl_test\my_stl_test\my_algorithm_heap.h(67): error C2784: “void __make_heap(RandomAccessIterator,RandomAccessIterator,T *,Distance *)”: 未能从“unknown-type”为“T *”推导 模板 参数
+          f:\learn_cpp\stl\my_stl_test\my_stl_test\my_algorithm_heap.h(72) : 参见“__make_heap”的声明
+          f:\learn_cpp\stl\my_stl_test\my_stl_test\main.cpp(12): 参见对正在编译的函数 模板 实例化“void make_heap<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<int>>>>(RandomAccessIterator,RandomAccessIterator)”的引用
+          with
+          [
+              RandomAccessIterator=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<int>>>
+          ]
+f:\learn_cpp\stl\my_stl_test\my_stl_test\my_algorithm_heap.h(67): error C3861: “value_type”:  找不到标识符
+f:\learn_cpp\stl\my_stl_test\my_stl_test\my_algorithm_heap.h(67): error C3861: “distance_type”:  找不到标识符

@@ -27,10 +27,15 @@ bool find(int target,vector<vector<int>> array){
 	return found;
 }
 int main(){
-	vector<vector<int>> array={{1,2,8,9},{2,4,9,12},{4,7,10,13},{6,8,11,15}};
-	int target=1;
-	cout<<find(target,array)<<endl;
+//	vector<vector<int>> array={{1,2,8,9},{2,4,9,12},{4,7,10,13},{6,8,11,15}};
+//	int target=1;
+//	cout<<find(target,array)<<endl;
 //1,[[1,2,8,9],[2,4,9,12],[4,7,10,13],[6,8,11,15]]
 //	cout<<array[0][0]<<endl;
+	int i = 10;
+	int j = 20;
+	int k = 3;
+	k *= i + j;
+	cout<<k<<endl;
 	return 0;
 }
