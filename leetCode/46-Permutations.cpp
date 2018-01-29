@@ -13,13 +13,17 @@ public:
     }
     void permute(vector<int>& nums,int begin,vector<vector<int>>& res){
     	if(begin>=nums.size()){
-    		res.push_back(nums)
+    		cout<<"2begin: "<<endl;
+    		res.push_back(nums);
     		return;
 		}
 		for(int i=begin;i<nums.size();++i){
+			cout<<"begin: "<<begin<<"i: "<<i<<endl;
 			swap(nums[begin],nums[i]);
 			permute(nums,begin+1,res);
-			swap(nums[begin],nums[i]);
+			cout<<"after permute begin: "<<begin<<"i: "<<i<<endl;
+//			cout<<"begin: "<<begin<<endl;
+//			swap(nums[begin],nums[i]);
 		}
 		return;
 	}
@@ -32,7 +36,7 @@ int main(){
 	for(vector<int> ivec:res){
 		for(auto ii:ivec)
 			cout<<ii<<" ";
-		cout<<end;
+		cout<<endl;
 	}
 	return 0;
 }

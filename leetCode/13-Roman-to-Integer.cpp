@@ -15,7 +15,7 @@ public:
         	if(res>re)
         	res+=cur;
 		}
-		return res;  VM-95-58-ubuntu
+		return res;  VM-96
     }
 };
 
