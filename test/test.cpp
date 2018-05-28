@@ -18,7 +18,7 @@ class Father
 
 public:
     Father() {
-        
+
     }
     Father(string name) {
         this->name = name;
@@ -54,4 +54,6 @@ int main(int argc, const char * argv[]) {
 	Son s("kaishi");
 	cout<<s.toString()<<endl;
     return 0;
+
+    
 }
