@@ -61,6 +61,7 @@ int main(int argc, char const *argv[])
     cout << "print static member: " << Base::baseNum << endl;
     b.baseNum = 5;
     cout << "print static member: " << Base::getbaseNum() << endl;
+    cout << "开始" << endl;
     system("pause");
     return 0;
 }
