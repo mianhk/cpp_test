@@ -3,7 +3,20 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-
+/*全局对象初始化*/
+class CTest
+{
+  public:
+    CTest()
+    {
+        cout << "构造函数..." << endl;
+    }
+    ~CTest()
+    {
+        cout << "析构函数..." << endl;
+    }
+};
+CTest t;
 //inline func
 inline string showAuthor()
 {
@@ -62,6 +75,6 @@ int main(int argc, char const *argv[])
     b.baseNum = 5;
     cout << "print static member: " << Base::getbaseNum() << endl;
     cout << "开始" << endl;
-    system("pause");
+    // system("pause");
     return 0;
 }
