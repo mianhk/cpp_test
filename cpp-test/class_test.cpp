@@ -75,6 +75,7 @@ int main(int argc, char const *argv[])
     b.baseNum = 5;
     cout << "print static member: " << Base::getbaseNum() << endl;
     cout << "开始" << endl;
-    // system("pause");
+    cout<<20152015%2016<<endl;
+    system("pause");
     return 0;
 }
