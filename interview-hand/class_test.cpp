@@ -27,53 +27,77 @@ using namespace std;
 
 /* code */
 
-class A
+// class A
+// {
+//   public:
+//     A(int num) : num(num) {}
+//     virtual func(int i)
+//     {
+//         cout << ++i << endl;
+//     }
+//     virtual ppnum()
+//     {
+//         cout << ++num << endl;
+//     }
+//     virtual ~A()
+//     {
+//         delete[] a;
+//     }
+
+//     int num;
+//     int a[3];
+
+//   private:
+// };
+
+// class B : public A
+// {
+//   public:
+//     B(int num) : num(num) {}
+//     func(int s)
+//     {
+//         cout << --s << endl;
+//     }
+//     ~B()
+//     {
+//         delete[] b;
+//     }
+//     int num;
+//     int b[3];
+
+//   private:
+// };
+// A a(3);
+
+//测试虚函数
+
+class Base
 {
   public:
-    A(int num) : num(num) {}
-    virtual func(int i)
-    {
-        cout << ++i << endl;
-    }
-    virtual ppnum()
-    {
-        cout << ++num << endl;
-    }
-    virtual ~A()
-    {
-        delete[] a;
-    }
-
-    int num;
-    int a[3];
+    Base() : num(0) {}
+    virtual void print() { cout << "base" << endl; }
 
   private:
+    int num;
 };
 
-class B : public A
+class Derived : public Base
 {
   public:
-    B(int num) : num(num) {}
-    func(int s)
-    {
-        cout << --s << endl;
-    }
-    ~B()
-    {
-        delete[] b;
-    }
-    int num;
-    int b[3];
-
-  private:
+    void print() { cout << "derived" << endl; }
 };
-A a(3);
 int main(int argc, char const *argv[])
 {
-    A a(3);
-    B b(4);
-    b.ppnum();
-    a.ppnum();
+    // A a(3);
+    // B b(4);
+    // b.ppnum();
+    // a.ppnum();
+    Derived *b = new Derived();
+    b->print();
+    Base *a = b;
+    a->print();
+    char x = 0xFF;
+    printf("%d\n", x--);
     system("pause");
     return 0;
 }
