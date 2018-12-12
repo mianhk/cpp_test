@@ -32,10 +32,38 @@ void selectSort(vector<int> &ivec)
     }
 }
 //插入排序
-void insertionSort(vector<int> ivec){
-    
+void insertionSort(vector<int> &ivec)
+{
+    for (int i = 1; i < ivec.size(); ++i)
+    {
+        int e = ivec[i];
+        int j;
+        for (j = i; j > 0 && ivec[j - 1] > e; --j)
+        {
+            ivec[j] = ivec[j - 1];
+        }
+        ivec[j] = e;
+    }
 }
+//希尔排序
+void shellSort(vector<int> &ivec)
+{
+    int h = 1, n = ivec.size();
+    while (h < n / 3)
+        h = 3 * h + 1;
 
+    while (h >= 1)
+    {
+        for (int i = h; i < n; ++i)
+        {
+            int e = ivec[i], j;
+            for (j = i; j >= h && ivec[j - h] > e; j -= h)
+                ivec[j] = ivec[j - h];
+            ivec[j] = e;
+        }
+        h /= 3;
+    }
+}
 //归并排序
 
 //快速排序
@@ -58,10 +86,14 @@ int main(int argc, char const *argv[])
     {
         ivec.push_back(rand() % (rangr - rangl + 1) + rangl);
     }
+    printArray(ivec);
+
     //调用排序函数
     // bobSort(ivec);
-    selectSort(ivec);
+    // insertionSort(ivec);
+    // selectSort(ivec);
+    shellSort(ivec);
     printArray(ivec);
-    // system("pause");
+    system("pause");
     return 0;
 }

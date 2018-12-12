@@ -13,6 +13,6 @@ int main(int argc, char const *argv[])
     cout << sizeof(str2) << endl;
     char *str3[] = {"abcd\n", "efgh\n"};
     cout << sizeof(str3) << endl;
-    system("pause");
+    // system("pause");
     return 0;
 }

@@ -1,7 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <ctime>
+#include <bits/stdc++.h>
 using namespace std;
 
 int _partition(vector<int> &ivec, int l, int r)
@@ -28,9 +25,40 @@ void _quick_sort(vector<int> &ivec, int l, int r)
     _quick_sort(ivec, l, mid - 1);
     _quick_sort(ivec, mid + 1, r);
 }
+//递归的快速排序
 void quick_sort(vector<int> &ivec)
 {
     _quick_sort(ivec, 0, ivec.size() - 1);
+}
+
+void _quickSort1(vector<int> &ivec, int l, int r)
+{
+    if (l >= r)
+        return;
+    stack<int> s;
+    s.push(l);
+    s.push(r);
+    while (!s.empty())
+    {
+        int right = s.top();
+        s.pop();
+        int left = s.top();
+        s.pop();
+        int mid = _partition(ivec, left, right);
+        if (left < right)
+        {
+            s.push(left);
+            s.push(mid);
+            s.push(mid + 1);
+            s.push(right);
+        }
+    }
+}
+
+//非递归快速排序
+void quickSort1(vector<int> &ivec)
+{
+    _quickSort1(ivec, 0, ivec.size() - 1);
 }
 
 //打印数组
@@ -53,9 +81,10 @@ int main(int argc, char const *argv[])
     //调用排序函数
     // bobSort(ivec);
     // selectSort(ivec);
-    quick_sort(ivec);
+    printArray(ivec);
+    quickSort1(ivec);
     cout << ivec.size() << endl;
     printArray(ivec);
-    // system("pause");
+    system("pause");
     return 0;
 }

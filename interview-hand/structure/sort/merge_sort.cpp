@@ -22,7 +22,7 @@ void __merge(vector<int> &ivec, int l, int mid, int r)
         // num.push_back(ivec[i]);
         num[i - l] = ivec[i];
     }
-    printArray(num);
+    // printArray(num);
     int i = l, j = mid + 1;
     for (int k = l; k <= r; ++k)
     {
@@ -78,6 +78,6 @@ int main(int argc, char const *argv[])
     merger_sort(ivec);
     cout << "after sort: " << endl;
     printArray(ivec);
-    // system("pause");
+    system("pause");
     return 0;
 }
